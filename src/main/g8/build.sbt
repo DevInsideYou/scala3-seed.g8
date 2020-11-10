@@ -1,7 +1,7 @@
 import Dependencies._
 
 ThisBuild / organization := "$organization;format="lower,package"$"
-ThisBuild / scalaVersion := "0.27.0-RC1"
+ThisBuild / scalaVersion := "3.0.0-M1"
 ThisBuild / version := "0.0.1-SNAPSHOT"
 
 ThisBuild / scalacOptions ++=
@@ -36,6 +36,6 @@ lazy val dependencies = Seq(
   ),
   libraryDependencies ++= Seq(
     org.scalatest.scalatest,
-    org.scalatestplus.`scalacheck-1-14`
+    org.scalatestplus.`scalacheck-1-15`
   ).map(_ % Test)
 )
