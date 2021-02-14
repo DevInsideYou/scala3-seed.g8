@@ -2,7 +2,6 @@ import Dependencies._
 
 ThisBuild / organization := "$organization;format="lower,package"$"
 ThisBuild / scalaVersion := "3.0.0-M3"
-ThisBuild / version := "0.0.1-SNAPSHOT"
 
 ThisBuild / scalacOptions ++=
   Seq("-rewrite", "-indent") ++ Seq(
