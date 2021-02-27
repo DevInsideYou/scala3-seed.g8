@@ -9,7 +9,7 @@ ThisBuild / scalacOptions ++=
     "-feature",
     "-language:implicitConversions",
     "-unchecked",
-    "-Xfatal-warnings"
+    "-Xfatal-warnings",
   )
 
 lazy val `$name;format="norm"$` =
@@ -23,10 +23,10 @@ lazy val commonSettings = Seq(
   update / evictionWarningOptions := EvictionWarningOptions.empty,
   Compile / console / scalacOptions --= Seq(
     "-Wunused:_",
-    "-Xfatal-warnings"
+    "-Xfatal-warnings",
   ),
   Test / console / scalacOptions :=
-    (Compile / console / scalacOptions).value
+    (Compile / console / scalacOptions).value,
 )
 
 lazy val dependencies = Seq(
@@ -35,6 +35,6 @@ lazy val dependencies = Seq(
   ),
   libraryDependencies ++= Seq(
     org.scalatest.scalatest,
-    org.scalatestplus.`scalacheck-1-15`
-  ).map(_ % Test)
+    org.scalatestplus.`scalacheck-1-15`,
+  ).map(_ % Test),
 )

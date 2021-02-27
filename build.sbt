@@ -13,5 +13,5 @@ scriptedLaunchOpts ++= Seq(
   "-Xmx1g",
   "-XX:ReservedCodeCacheSize=128m",
   "-Xss2m",
-  "-Dfile.encoding=UTF-8"
+  "-Dfile.encoding=UTF-8",
 )
