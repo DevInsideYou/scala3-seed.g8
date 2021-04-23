@@ -4,13 +4,14 @@ ThisBuild / organization := "$organization;format="lower,package"$"
 ThisBuild / scalaVersion := "3.0.0-RC3"
 
 ThisBuild / scalacOptions ++=
-  Seq("-rewrite", "-indent") ++ Seq(
+  Seq(
+    "-Xfatal-warnings",
+    "-Ykind-projector",
     "-deprecation",
     "-feature",
     "-language:implicitConversions",
     "-unchecked",
-    "-Xfatal-warnings",
-  )
+  ) ++ Seq("-rewrite", "-indent") ++ Seq("-source", "future")
 
 lazy val `$name;format="norm"$` =
   project
