@@ -5,12 +5,13 @@ ThisBuild / scalaVersion := "3.0.0-RC3"
 
 ThisBuild / scalacOptions ++=
   Seq(
-    "-Xfatal-warnings",
-    "-Ykind-projector",
     "-deprecation",
     "-feature",
     "-language:implicitConversions",
     "-unchecked",
+    "-Xfatal-warnings",
+    "-Ykind-projector",
+    "-Ysafe-init",
   ) ++ Seq("-rewrite", "-indent") ++ Seq("-source", "future")
 
 lazy val `$name;format="norm"$` =
