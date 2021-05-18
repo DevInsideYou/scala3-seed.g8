@@ -10,6 +10,7 @@ ThisBuild / scalacOptions ++=
     "-language:implicitConversions",
     "-unchecked",
     "-Xfatal-warnings",
+    "-Yexplicit-nulls",
     "-Ykind-projector",
     "-Ysafe-init",
   ) ++ Seq("-rewrite", "-indent") ++ Seq("-source", "future")
