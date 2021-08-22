@@ -22,8 +22,11 @@ lazy val `$name;format="norm"$` =
     .settings(commonSettings)
     .settings(dependencies)
 
-lazy val commonSettings = Seq(
+lazy val commonSettings = commonScalacOptions ++ Seq(
   update / evictionWarningOptions := EvictionWarningOptions.empty,
+)
+
+lazy val commonScalacOptions = Seq(
   Compile / console / scalacOptions --= Seq(
     "-Wunused:_",
     "-Xfatal-warnings",
