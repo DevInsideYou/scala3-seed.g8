@@ -23,7 +23,7 @@ lazy val `$name;format="norm"$` =
     .settings(dependencies)
 
 lazy val commonSettings = commonScalacOptions ++ Seq(
-  update / evictionWarningOptions := EvictionWarningOptions.empty,
+  update / evictionWarningOptions := EvictionWarningOptions.empty
 )
 
 lazy val commonScalacOptions = Seq(

@@ -13,8 +13,8 @@ export org.scalatest.compatible.Assertion
 
 trait TestSuite
     extends AnyFunSuite,
-      should.Matchers,
-      GivenWhenThen,
-      BeforeAndAfterAll,
-      BeforeAndAfterEach,
-      ScalaCheckPropertyChecks
+            should.Matchers,
+            GivenWhenThen,
+            BeforeAndAfterAll,
+            BeforeAndAfterEach,
+            ScalaCheckPropertyChecks
