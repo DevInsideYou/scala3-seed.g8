@@ -1,7 +1,7 @@
 import Dependencies._
 
 ThisBuild / organization := "$organization;format="lower,package"$"
-ThisBuild / scalaVersion := "3.0.2"
+ThisBuild / scalaVersion := "3.1.0"
 
 ThisBuild / scalacOptions ++=
   Seq(
