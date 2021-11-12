@@ -1,7 +1,7 @@
 package $package;format="lower,package"$
 package $name;format="lower,word"$
 
-object Main extends App:
+@main def Main(args: String*): Unit =
   println("─" * 100)
 
   println("hello world")
