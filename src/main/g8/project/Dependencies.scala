@@ -1,15 +1,15 @@
 import sbt._
 
 object Dependencies {
-  case object org {
-    case object scalatest {
+  object org {
+    object scalatest {
       val scalatest =
-        "org.scalatest" %% "scalatest" % "3.2.10"
+        "org.scalatest" %% "scalatest" % "3.2.11"
     }
 
-    case object scalatestplus {
+    object scalatestplus {
       val `scalacheck-1-15` =
-        "org.scalatestplus" %% "scalacheck-1-15" % "3.2.10.0"
+        "org.scalatestplus" %% "scalacheck-1-15" % "3.2.11.0"
     }
   }
 }

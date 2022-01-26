@@ -1,7 +1,7 @@
 import Dependencies._
 
 ThisBuild / organization := "$organization;format="lower,package"$"
-ThisBuild / scalaVersion := "3.1.0"
+ThisBuild / scalaVersion := "3.1.1"
 
 ThisBuild / scalacOptions ++=
   Seq(
@@ -13,7 +13,7 @@ ThisBuild / scalacOptions ++=
     "-Yexplicit-nulls", // experimental (I've seen it cause issues with circe)
     "-Ykind-projector",
     "-Ysafe-init", // experimental (I've seen it cause issues with circe)
-  ) ++ Seq("-rewrite", "-indent") ++ Seq("-source", "future")
+  ) ++ Seq("-rewrite", "-indent") ++ Seq("-source", "future-migration")
 
 lazy val `$name;format="norm"$` =
   project
