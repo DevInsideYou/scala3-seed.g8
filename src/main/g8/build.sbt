@@ -6,6 +6,7 @@ ThisBuild / scalaVersion := "3.1.1"
 ThisBuild / scalacOptions ++=
   Seq(
     "-deprecation",
+    "-explain",
     "-feature",
     "-language:implicitConversions",
     "-unchecked",
