@@ -8,7 +8,8 @@ import org.scalatest.funsuite.AnyFunSuite
 import org.scalatest.matchers.should
 import org.scalatestplus.scalacheck.ScalaCheckPropertyChecks
 
-export org.scalacheck.{ Arbitrary, Gen }
+export org.scalacheck.Arbitrary
+export org.scalacheck.Gen
 export org.scalatest.compatible.Assertion
 
 trait TestSuite
