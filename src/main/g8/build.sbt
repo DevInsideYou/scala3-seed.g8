@@ -42,6 +42,6 @@ lazy val dependencies = Seq(
   ),
   libraryDependencies ++= Seq(
     org.scalatest.scalatest,
-    org.scalatestplus.`scalacheck-1-15`,
+    org.scalatestplus.`scalacheck-1-16`,
   ).map(_ % Test),
 )
