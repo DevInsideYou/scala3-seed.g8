@@ -1,8 +1,6 @@
 package $package;format="lower,package"$
 package $name;format="lower,word"$
 
-import scala.language.adhocExtensions
-
 import org.scalatest.*
 import org.scalatest.funsuite.AnyFunSuite
 import org.scalatest.matchers.should
