@@ -11,12 +11,12 @@ object Dependencies {
   object org {
     object scalatest {
       val scalatest =
-        "org.scalatest" %% "scalatest" % "3.2.14"
+        "org.scalatest" %% "scalatest" % "3.2.15"
     }
 
     object scalatestplus {
-      val `scalacheck-1-16` =
-        "org.scalatestplus" %% "scalacheck-1-16" % "3.2.14.0"
+      val `scalacheck-1-17` =
+        "org.scalatestplus" %% "scalacheck-1-17" % "3.2.15.0"
     }
   }
 }

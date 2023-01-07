@@ -50,6 +50,6 @@ lazy val dependencies = Seq(
   libraryDependencies ++= Seq(
     com.eed3si9n.expecty,
     org.scalatest.scalatest,
-    org.scalatestplus.`scalacheck-1-16`,
+    org.scalatestplus.`scalacheck-1-17`,
   ).map(_ % Test),
 )
