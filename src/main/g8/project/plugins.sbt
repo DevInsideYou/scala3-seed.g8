@@ -1,10 +1,12 @@
 ThisBuild / autoStartServer := false
 
+// The std library FOR sbt is handled by sbt itself so no need to include it in the report.
+dependencyUpdatesFilter -= moduleFilter(name = "scala-library")
+
 update / evictionWarningOptions := EvictionWarningOptions.empty
 
 addDependencyTreePlugin
 
-addSbtPlugin("com.github.sbt" % "sbt-git" % "2.0.0")
 addSbtPlugin("com.mayreh" % "sbt-thank-you-stars" % "0.2")
 addSbtPlugin("com.timushev.sbt" % "sbt-rewarn" % "0.1.3")
 addSbtPlugin("com.timushev.sbt" % "sbt-updates" % "0.6.4")

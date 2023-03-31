@@ -11,14 +11,25 @@ object Dependencies {
   }
 
   object org {
-    object scalatest {
-      val scalatest =
-        "org.scalatest" %% "scalatest" % "3.2.15"
+    object scalacheck {
+      val scalacheck =
+        "org.scalacheck" %% "scalacheck" % "1.17.0"
     }
 
-    object scalatestplus {
-      val `scalacheck-1-17` =
-        "org.scalatestplus" %% "scalacheck-1-17" % "3.2.15.0"
+    object scalameta {
+      val munit =
+        moduleId("munit")
+
+      val `munit-scalacheck` =
+        moduleId("munit-scalacheck")
+
+      private def moduleId(artifact: String): ModuleID =
+        "org.scalameta" %% artifact % "0.7.29"
+    }
+
+    object typelevel {
+      val `discipline-munit` =
+        "org.typelevel" %% "discipline-munit" % "1.0.9"
     }
   }
 }

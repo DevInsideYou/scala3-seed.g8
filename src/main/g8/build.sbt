@@ -11,9 +11,9 @@ ThisBuild / scalacOptions ++=
     "-language:implicitConversions",
     "-unchecked",
     "-Xfatal-warnings",
-    "-Yexplicit-nulls", // experimental (I've seen it cause issues with circe)
+    "-Yexplicit-nulls",
     "-Ykind-projector",
-    "-Ysafe-init", // experimental (I've seen it cause issues with circe)
+    "-Ysafe-init",
   ) ++ Seq("-rewrite", "-indent") ++ Seq("-source", "future-migration")
 
 lazy val `$name;format="norm"$` =
@@ -49,7 +49,9 @@ lazy val dependencies = Seq(
   ),
   libraryDependencies ++= Seq(
     com.eed3si9n.expecty.expecty,
-    org.scalatest.scalatest,
-    org.scalatestplus.`scalacheck-1-17`,
+    org.scalacheck.scalacheck,
+    org.scalameta.`munit-scalacheck`,
+    org.scalameta.munit,
+    org.typelevel.`discipline-munit`,
   ).map(_ % Test),
 )
