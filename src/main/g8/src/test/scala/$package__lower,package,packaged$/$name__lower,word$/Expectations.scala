@@ -11,7 +11,7 @@ trait Expectations:
   inline def expect(
     inline cond: Boolean,
     clue: => Any = "assertion failed",
-  )(implicit
+  )(using
     loc: munit.Location
   ): Unit =
     lazy val calculatedClue =
@@ -28,7 +28,7 @@ trait Expectations:
     obtained: A,
     expected: B,
     clue: => Any = "values are not the same",
-  )(implicit
+  )(using
     loc: munit.Location,
     ev: B <:< A,
   ): Unit =
@@ -46,7 +46,7 @@ trait Expectations:
     obtained: A,
     expected: B,
     clue: => Any = "values are the same",
-  )(implicit
+  )(using
     loc: munit.Location,
     ev: A =:= B,
   ): Unit =
