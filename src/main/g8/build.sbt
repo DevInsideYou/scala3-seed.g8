@@ -1,7 +1,7 @@
 import Dependencies._
 
 ThisBuild / organization := "$organization;format="lower,package"$"
-ThisBuild / scalaVersion := "3.2.2"
+ThisBuild / scalaVersion := "3.3.0"
 
 ThisBuild / scalacOptions ++=
   Seq(
@@ -9,6 +9,8 @@ ThisBuild / scalacOptions ++=
     "-explain",
     "-feature",
     "-language:implicitConversions",
+    "-Wunused:all",
+    "-Wvalue-discard",
     "-unchecked",
     "-Xfatal-warnings",
     "-Yexplicit-nulls",
