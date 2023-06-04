@@ -3,21 +3,6 @@ import Dependencies._
 ThisBuild / organization := "$organization;format="lower,package"$"
 ThisBuild / scalaVersion := "3.3.0"
 
-ThisBuild / scalacOptions ++=
-  Seq(
-    "-deprecation",
-    "-explain",
-    "-feature",
-    "-language:implicitConversions",
-    "-Wunused:all",
-    "-Wvalue-discard",
-    "-unchecked",
-    "-Xfatal-warnings",
-    "-Yexplicit-nulls",
-    "-Ykind-projector",
-    "-Ysafe-init",
-  ) ++ Seq("-rewrite", "-indent") ++ Seq("-source", "future-migration")
-
 lazy val `$name;format="norm"$` =
   project
     .in(file("."))
@@ -27,10 +12,13 @@ lazy val `$name;format="norm"$` =
 
 lazy val commonSettings = {
   lazy val commonScalacOptions = Seq(
-    Compile / console / scalacOptions --= Seq(
-      "-Wunused:_",
-      "-Xfatal-warnings",
-    ),
+    Compile / console / scalacOptions := {
+      (Compile / console / scalacOptions)
+        .value
+        .filterNot(_.contains("wartremover"))
+        .filterNot(Scalac.Lint.toSet)
+        .filterNot(Scalac.FatalWarnings.toSet) :+ "-Wconf:any:silent"
+    },
     Test / console / scalacOptions :=
       (Compile / console / scalacOptions).value,
   )

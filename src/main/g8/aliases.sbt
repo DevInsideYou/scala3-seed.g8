@@ -14,11 +14,11 @@ addCommandAlias("s", "reStop")
 addCommandAlias("star", "thankYouStars")
 addCommandAlias(
   "styleCheck",
-  "scalafmtSbtCheck; scalafmtCheckAll",
+  "scalafmtSbtCheck; scalafmtCheckAll; Test / compile; scalafixAll --check",
 )
 addCommandAlias(
   "styleFix",
-  "scalafmtSbt; scalafmtAll",
+  "Test / compile; scalafixAll; scalafmtSbt; scalafmtAll",
 )
 addCommandAlias(
   "up2date",
@@ -40,7 +40,7 @@ onLoadMessage +=
       |│ \${styled("rs")}          │ reStart           │
       |│ \${styled("s")}           │ reStop            │
       |│ \${styled("star")}        │ thankYouStars     │
-      |│ \${styled("styleCheck")}  │ fmt check         │
-      |│ \${styled("styleFix")}    │ fmt               │
+      |│ \${styled("styleCheck")}  │ fmt & fix check   │
+      |│ \${styled("styleFix")}    │ fix then fmt      │
       |│ \${styled("up2date")}     │ dependencyUpdates │
       |╰─────────────┴───────────────────╯""".stripMargin
