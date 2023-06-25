@@ -8,6 +8,7 @@ lazy val `$name;format="norm"$` =
     .in(file("."))
     .settings(name := "$name$")
     .settings(commonSettings)
+    .settings(autoImportSettings)
     .settings(dependencies)
 
 lazy val commonSettings = {
@@ -32,6 +33,22 @@ lazy val commonSettings = {
     otherCommonSettings,
   ).reduceLeft(_ ++ _)
 }
+
+lazy val autoImportSettings = Seq(
+  scalacOptions +=
+    Seq(
+      "java.lang",
+      "scala",
+      "scala.Predef",
+      "scala.annotation",
+      "scala.util.chaining",
+    ).mkString(start = "-Yimports:", sep = ",", end = ""),
+  Test / scalacOptions +=
+    Seq(
+      "org.scalacheck",
+      "org.scalacheck.Prop",
+    ).mkString(start = "-Yimports:", sep = ",", end = ""),
+)
 
 lazy val dependencies = Seq(
   libraryDependencies ++= Seq(
