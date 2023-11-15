@@ -26,6 +26,9 @@ lazy val commonSettings = {
 
   lazy val otherCommonSettings = Seq(
     update / evictionWarningOptions := EvictionWarningOptions.empty
+    // cs launch scalac:3.3.1 -- -Wconf:help
+    // src is not yet available for Scala3
+    // scalacOptions += s"-Wconf:src=\${target.value}/.*:s",
   )
 
   Seq(
