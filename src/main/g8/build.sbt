@@ -1,7 +1,7 @@
 import Dependencies._
 
 ThisBuild / organization := "$organization;format="lower,package"$"
-ThisBuild / scalaVersion := "3.4.0"
+ThisBuild / scalaVersion := "3.4.1"
 
 lazy val `$name;format="norm"$` =
   project
