@@ -3,8 +3,8 @@ import Scalac.Keys._
 ThisBuild / scalacOptions ++= Seq(
   "-Wunused:imports", // always on for OrganizeImports
   "-Yexplicit-nulls",
-  "-Ykind-projector",
-  "-Ysafe-init",
+  "-Xkind-projector",
+  "-Wsafe-init",
   "-language:all",
 ) ++
   Seq("-encoding", "UTF-8") ++
