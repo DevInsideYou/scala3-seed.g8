@@ -5,13 +5,22 @@ ThisBuild / scalacOptions ++= Seq(
   "-Yexplicit-nulls",
   "-Xkind-projector",
   "-Wsafe-init",
-  "-language:all",
+  languageAll,
 ) ++
   Seq("-encoding", "UTF-8") ++
   Seq("-rewrite", "-indent") ++
   Seq("-source", "future-migration") ++
   warnings.value ++
   lint.value
+
+// cs launch scalac:3.5.1 -- -language:help
+lazy val languageAll =
+  Seq(
+    "noAutoTupling",
+    "dynamics",
+    "strictEquality",
+    "implicitConversions",
+  ).mkString("-language:", ",", "")
 
 ThisBuild / warnings := {
   if (insideCI.value)

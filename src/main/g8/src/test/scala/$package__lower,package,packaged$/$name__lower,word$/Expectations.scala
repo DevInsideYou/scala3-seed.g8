@@ -1,5 +1,5 @@
-package $package;format="lower,package"$
-package $name;format="lower,word"$
+package $package; format = "lower,package" $
+package $name; format = "lower,word" $
 
 import scala.Console.*
 
@@ -13,7 +13,7 @@ trait Expectations:
     inline cond: Boolean,
     clue: => Any = "assertion failed",
   )(using
-    loc: munit.Location
+    munit.Location
   ): Unit =
     lazy val calculatedClue =
       val expectyClue =
@@ -30,8 +30,9 @@ trait Expectations:
     expected: B,
     clue: => Any = "values are not the same",
   )(using
-    loc: munit.Location,
-    ev: B <:< A,
+    munit.Location,
+    B <:< A,
+    CanEqual[A, B],
   ): Unit =
     lazy val calculatedClue =
       val expectyClue =
@@ -48,16 +49,16 @@ trait Expectations:
     expected: B,
     clue: => Any = "values are the same",
   )(using
-    loc: munit.Location,
-    ev: A =:= B,
+    munit.Location,
+    A =:= B,
+    CanEqual[A, B],
   ): Unit =
     lazy val calculatedClue =
       val expectyClue =
         try { Expecty.assert(obtained != expected); "" }
         catch Expectations.ExtractMessage
 
-      val clueWithSuffix =
-        s"\${munitPrint(clue)} expected same: \$expected was not: \$obtained"
+      val clueWithSuffix = s"\${munitPrint(clue)} expected same: \$expected was not: \$obtained"
 
       if expectyClue.isEmpty then clueWithSuffix
       else s"\$RED\n\$clueWithSuffix\n\$expectyClue\$RESET"
