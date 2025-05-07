@@ -8,7 +8,6 @@ ThisBuild / scalacOptions ++= Seq(
   languageAll,
 ) ++
   Seq("-encoding", "UTF-8") ++
-  Seq("-rewrite", "-indent") ++
   Seq("-source", "future-migration") ++
   warnings.value ++
   lint.value
